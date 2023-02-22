@@ -1,29 +1,5 @@
-// A CLASSE CLIENTE OU SEJA UM MOLDE
-class Cliente {
-    nome;
-    cpf;
-    
-}
-// #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields 
-class ContaCorrente {
-    agencia;
-    _saldo = 0;// o anderline indica que a classe e privada, neste caso não devemos acessa la de fora do escopo. 
-    
-    // Regra de Negocio sacar === tem que ter saldo!
-    sacar(valor) { // dentro dos parenteses estão os parametros ou argumentos
-        if(this._saldo >= valor) {
-            this._saldo -= valor;
-        }else {
-            console.log('Saldo Insuficiente!');
-        }
-    }
-    depositar(valor) {
-        if(valor > 0) {
-            this._saldo += valor;
-        }
-    }
-}
-
+import {Cliente} from "./Cliente.js";
+import {ContaCorrente} from "./ContaCorrente.js"; 
 // Objeto1 instanciado
  const cliente1 = new Cliente;
  cliente1.nome = 'Ricardo';
@@ -41,7 +17,8 @@ class ContaCorrente {
 contaCorrenteRicardo.depositar(100);
 contaCorrenteRicardo.depositar(100);
 contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.sacar(50);
 
+const valorSacado = contaCorrenteRicardo.sacar(50);
+console.log(valorSacado)
 
 console.log(contaCorrenteRicardo);

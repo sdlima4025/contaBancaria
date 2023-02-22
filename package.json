@@ -1,0 +1,21 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "projeto bytebank Alura ONE by-sdlima",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdlima4025/contaBancaria.git"
+  },
+  "author": "sdlima",
+  "license": "ISC",
+  "type":"module",
+  "bugs": {
+    "url": "https://github.com/sdlima4025/contaBancaria/issues"
+  },
+  "homepage": "https://github.com/sdlima4025/contaBancaria#readme"
+}
+
