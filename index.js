@@ -2,19 +2,24 @@
 class Cliente {
     nome;
     cpf;
-    agencia;
-    saldo;  
+    
 }
-
+// #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields 
 class ContaCorrente {
     agencia;
-    saldo; 
+    _saldo = 0;// o anderline indica que a classe e privada, neste caso não devemos acessa la de fora do escopo. 
     
-    sacar(valor) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
+    // Regra de Negocio sacar === tem que ter saldo!
+    sacar(valor) { // dentro dos parenteses estão os parametros ou argumentos
+        if(this._saldo >= valor) {
+            this._saldo -= valor;
         }else {
-            console.log('Saldo Inssuficiente!');
+            console.log('Saldo Insuficiente!');
+        }
+    }
+    depositar(valor) {
+        if(valor > 0) {
+            this._saldo += valor;
         }
     }
 }
@@ -31,18 +36,12 @@ class ContaCorrente {
  cliente2.cpf = 88822233309;
 
  const contaCorrenteRicardo = new ContaCorrente();
- contaCorrenteRicardo.saldo = 0;
  contaCorrenteRicardo.agencia = 1001;
 
-
-console.log(contaCorrenteRicardo.saldo);
-contaCorrenteRicardo.saldo = 100;
-console.log(contaCorrenteRicardo.saldo);
-contaCorrenteRicardo.sacar(150);
-
+contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.depositar(100);
+contaCorrenteRicardo.sacar(50);
 
 
-console.log(contaCorrenteRicardo.saldo);
-console.log(cliente1);
-console.log(cliente2);
-
+console.log(contaCorrenteRicardo);
