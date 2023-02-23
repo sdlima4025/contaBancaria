@@ -1,6 +1,8 @@
 // #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields 
 export class ContaCorrente {
     agencia;
+    cliente;
+
     _saldo = 0;// o anderline indica que a classe e privada, neste caso não devemos acessa la de fora do escopo. 
     
     // Regra de Negocio sacar === tem que ter saldo!
@@ -17,5 +19,10 @@ export class ContaCorrente {
             return;     
         } 
         this._saldo += valor;        
+    }
+
+    transferir(valor, conta) {
+        const valoSacado = this.sacar(valor);
+        conta.depositar(valoSacado);
     }
 }
