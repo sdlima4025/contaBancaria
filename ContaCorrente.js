@@ -4,22 +4,25 @@ import { Cliente } from "./Cliente.js";
 export class ContaCorrente {
     agencia; // Atributo publico
     _cliente; // Atributo Privado
-
+    _saldo = 0;// o anderline indica que a classe e privada, neste caso não devemos acessa la de fora do escopo. 
+    
     set cliente(novoValor) {
         if(novoValor instanceof Cliente){
             this._cliente = novoValor;
         }
        
-        }
+    }
         get cliente() {
             return this._cliente;
-    }
-
-    _saldo = 0;// o anderline indica que a classe e privada, neste caso não devemos acessa la de fora do escopo. 
-    
+}
     get saldo() {
         return this._saldo;
-    }
+}
+
+constructor(cliente, agencia){
+    this.agencia = agencia;
+    this.cliente = cliente;
+}
 
     // Regra de Negocio sacar === tem que ter saldo!
     sacar(valor) { // dentro dos parenteses estão os parametros ou argumentos
