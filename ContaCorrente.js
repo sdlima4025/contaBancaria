@@ -1,10 +1,26 @@
+import { Cliente } from "./Cliente.js";
+
 // #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields 
 export class ContaCorrente {
-    agencia;
-    cliente;
+    agencia; // Atributo publico
+    _cliente; // Atributo Privado
+
+    set cliente(novoValor) {
+        if(novoValor instanceof Cliente){
+            this._cliente = novoValor;
+        }
+       
+        }
+        get cliente() {
+            return this._cliente;
+    }
 
     _saldo = 0;// o anderline indica que a classe e privada, neste caso não devemos acessa la de fora do escopo. 
     
+    get saldo() {
+        return this._saldo;
+    }
+
     // Regra de Negocio sacar === tem que ter saldo!
     sacar(valor) { // dentro dos parenteses estão os parametros ou argumentos
         if(this._saldo >= valor) {
