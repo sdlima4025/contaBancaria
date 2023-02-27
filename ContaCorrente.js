@@ -2,6 +2,7 @@ import { Cliente } from "./Cliente.js";
 
 // #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields 
 export class ContaCorrente {
+    static numeroDeContas = 0;
     agencia; // Atributo publico
     _cliente; // Atributo Privado
     _saldo = 0;// o anderline indica que a classe e privada, neste caso não devemos acessa la de fora do escopo. 
@@ -19,9 +20,10 @@ export class ContaCorrente {
         return this._saldo;
 }
 
-constructor(cliente, agencia){
+constructor(agencia, cliente){
     this.agencia = agencia;
     this.cliente = cliente;
+    ContaCorrente.numeroDeContas += 1;
 }
 
     // Regra de Negocio sacar === tem que ter saldo!

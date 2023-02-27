@@ -11,7 +11,7 @@ import {ContaCorrente} from "./ContaCorrente.js";
 let valor = 200;
 contaCorrenteRicardo.transferir(valor, conta2);
 
- console.log (cliente2);
+ console.log (ContaCorrente.numeroDeContas);
 
 
 
