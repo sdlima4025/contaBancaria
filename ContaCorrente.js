@@ -3,11 +3,8 @@ import { Cliente } from "./Cliente.js";
 // #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields 
 export class ContaCorrente {
     static numeroDeContas = 0;
-    agencia; // Atributo publico
-    _cliente; // Atributo Privado
-    _saldo = 0;// o anderline indica que a classe e privada, neste caso não devemos acessa la de fora do escopo. 
     
-    set cliente(novoValor) {
+      set cliente(novoValor) {
         if(novoValor instanceof Cliente){
             this._cliente = novoValor;
         }
@@ -23,6 +20,7 @@ export class ContaCorrente {
 constructor(agencia, cliente){
     this.agencia = agencia;
     this.cliente = cliente;
+    this._saldo = 0;
     ContaCorrente.numeroDeContas += 1;
 }
 
