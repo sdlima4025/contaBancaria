@@ -1,11 +1,13 @@
 export class Conta {
     constructor(saldoInicial, cliente, agencia) {
+        if(this.constructor == Conta) {
+            throw new Error("Este Objeto não deveria ser instanciado Diretamente!");
+        }
+
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
-        if(this.constructor == Conta) {
-            console.log("Este Objeto não deveria ser instanciado!");
-        }
+      
         
     }
 
