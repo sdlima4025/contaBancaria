@@ -16,7 +16,6 @@ constructor(cliente, agencia) {
     }
 
     /** 
-
     O que aprendemos nessa aula:
 
         Especializando código
@@ -36,3 +35,5 @@ constructor(cliente, agencia) {
         Método e propriedades privadas e protegidas
 
  */
+
+        //  02 Propriedade constructor
