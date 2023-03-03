@@ -1,13 +1,14 @@
+// classe abstrata
 export class Conta {
     constructor(saldoInicial, cliente, agencia) {
         if(this.constructor == Conta) {
-            throw new Error("Este Objeto não deveria ser instanciado Diretamente!");
+            throw new Error("Este Objeto não deveria ser instanciado Diretamente, pois esta é uma classe abstrata!");
         }
 
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
-      
+    
         
     }
 
@@ -15,7 +16,7 @@ export class Conta {
         if(novoValor instanceof Cliente){
             this._cliente = novoValor;
         }
-       
+    
     }
         get cliente() {
             return this._cliente;
@@ -23,10 +24,9 @@ export class Conta {
     get saldo() {
         return this._saldo;
 }
-
+    // Metood Abstrato
     sacar(valor) { 
-       let taxa = 1;
-            return this._sacar(valor, taxa);
+        throw new error("Esta é uma classe abstrata, deve ser instanciada");
         }
         _sacar(valor, taxa) {
             const valorSacado = taxa * valor;
