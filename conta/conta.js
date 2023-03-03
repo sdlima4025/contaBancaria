@@ -24,7 +24,7 @@ export class Conta {
     get saldo() {
         return this._saldo;
 }
-    // Metood Abstrato
+    // Metodo Abstrato
     sacar(valor) { 
         throw new error("Esta é uma classe abstrata, deve ser instanciada");
         }
