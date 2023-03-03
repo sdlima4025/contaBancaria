@@ -1,4 +1,4 @@
-import { Conta } from "./Conta.js";
+import { Conta } from "./conta/conta.js/index.js";
 
 // #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields 
 export class ContaCorrente extends Conta {
