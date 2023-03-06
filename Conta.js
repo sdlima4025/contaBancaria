@@ -1,4 +1,8 @@
 // classe abstrata
+/*  Temos um construtor Conta que define um atributo saldo e um método depositar:
+
+*/ 
+
 export class Conta {
     constructor(saldoInicial, cliente, agencia) {
         if(this.constructor == Conta) {
